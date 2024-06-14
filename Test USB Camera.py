@@ -2,7 +2,7 @@ import cv2  # Install opencv-python
 
 
 # CAMERA can be 0 or 1 based on default camera of your computer
-camera = cv2.VideoCapture(0)
+camera = cv2.VideoCapture(1)
 
 while True:
     # Grab the webcamera's image.
