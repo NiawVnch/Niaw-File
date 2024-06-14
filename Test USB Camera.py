@@ -9,7 +9,7 @@ while True:
     ret, image = camera.read()
 
     # Show the image in a window
-    cv2.imshow("Webcam Image", image)
+    cvShowImage("Webcam Image", image)
 
     # Listen to the keyboard for presses.
     keyboard_input = cv2.waitKey(1)
