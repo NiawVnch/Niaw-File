@@ -22,7 +22,7 @@ while True:
     image = cv2.resize(image, (224, 224), interpolation=cv2.INTER_AREA)
 
     # Show the image in a window
-    cv2.imshow("Webcam Image", image)
+    #cv2.imshow("Webcam Image", image)
 
     # Make the image a numpy array and reshape it to the models input shape.
     image = np.asarray(image, dtype=np.float32).reshape(1, 224, 224, 3)
@@ -41,11 +41,11 @@ while True:
     print("Confidence Score:", str(np.round(confidence_score * 100))[:-2], "%")
 
     # Listen to the keyboard for presses.
-    keyboard_input = cv2.waitKey(1)
+    #keyboard_input = cv2.waitKey(1)
 
     # 27 is the ASCII for the esc key on your keyboard.
-    if keyboard_input == 27:
-        break
+    #if keyboard_input == 27:
+        #break
 
-camera.release()
-cv2.destroyAllWindows()
+#camera.release()
+#cv2.destroyAllWindows()
