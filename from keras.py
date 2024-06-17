@@ -41,7 +41,7 @@ while True:
     print("Confidence Score:", str(np.round(confidence_score * 100))[:-2], "%")
 
     # Listen to the keyboard for presses.
-    keyboard_input = cv2.waitKey(1)
+    keyboard_input = cv2.waitKey(20)
 
     # 27 is the ASCII for the esc key on your keyboard.
     if keyboard_input == 27:
