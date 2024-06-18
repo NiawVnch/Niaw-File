@@ -74,3 +74,10 @@ v4l2-ctl --list-devices
 
 # Run the script
 python3 "Test Camera.py"
+
+#install VScode
+linaro@linaro-alip:~$ cd Downloads
+linaro@linaro-alip:~/Downloads$ ls
+ code_1.90.1-1718141439_amd64.deb   dataset   main_opencam.py   myenv  'Test Pret rainCNN model'  'Tinker board setup detail.txt'
+linaro@linaro-alip:~/Downloads$ sudo dpkg -i code_1.90.1-1718139718_arm64.deb
+
