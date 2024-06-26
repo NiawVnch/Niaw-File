@@ -39,4 +39,15 @@ Processing triggers for dictionaries-common (1.28.4) ...
 Processing triggers for libc-bin (2.31-13+deb11u10) ...
 Processing triggers for dbus (1.12.28-0+deb11u1) ...
 
+====
+
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root        14G   14G   90M 100% /
+devtmpfs        1.9G  8.0K  1.9G   1% /dev
+tmpfs           1.9G     0  1.9G   0% /dev/shm
+tmpfs           766M  1.1M  765M   1% /run
+tmpfs           5.0M  4.0K  5.0M   1% /run/lock
+/dev/mmcblk0p7  4.2M  456K  3.5M  12% /boot
+tmpfs           383M   56K  383M   1% /run/user/1000
+
 
