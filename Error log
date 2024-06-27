@@ -48,6 +48,23 @@ tmpfs           1.9G     0  1.9G   0% /dev/shm
 tmpfs           766M  1.1M  765M   1% /run
 tmpfs           5.0M  4.0K  5.0M   1% /run/lock
 /dev/mmcblk0p7  4.2M  456K  3.5M  12% /boot
+
+----
+
+NAME         MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda            8:0    1  7.8G  0 disk /media/linaro/809B-356D
+mmcblk0      179:0    0 14.6G  0 disk 
+├─mmcblk0p1  179:1    0    4M  0 part 
+├─mmcblk0p2  179:2    0    4M  0 part 
+├─mmcblk0p3  179:3    0    4M  0 part 
+├─mmcblk0p4  179:4    0   64M  0 part 
+├─mmcblk0p5  179:5    0  128M  0 part 
+├─mmcblk0p6  179:6    0   32M  0 part 
+├─mmcblk0p7  179:7    0   64M  0 part /boot
+└─mmcblk0p8  179:8    0 14.3G  0 part /
+mmcblk0boot0 179:32   0    4M  1 disk 
+mmcblk0boot1 179:64   0    4M  1 disk 
+
 tmpfs           383M   56K  383M   1% /run/user/1000
 
 
