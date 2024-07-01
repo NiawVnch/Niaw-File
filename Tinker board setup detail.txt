@@ -80,3 +80,21 @@ linaro@linaro-alip:~/Downloads$ ls
  code_1.90.1-1718141439_amd64.deb   dataset   main_opencam.py   myenv  'Test Pret rainCNN model'  'Tinker board setup detail.txt'
 linaro@linaro-alip:~/Downloads$ sudo dpkg -i code_1.90.1-1718139718_arm64.deb
 
+#install node-red
+#install MQTT broker on device
+sudo apt-get install mosquitto mosquitto-clients
+
+#Rule file for allow 1880 port firewall
+sudo mkdir -p /etc/iptables
+sudo iptables -A INPUT -p tcp --dport 1880 -j ACCEPT
+#Not use#sudo iptables-save > /etc/iptables/rules.v4
+sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null
+
+sudo npm install -g --unsafe-perm node-red pm2
+sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/node-red/node_modules/.bin/pm2 startup systemd -u pi --hp /home/pi
+sudo npm install -g pm2
+sudo pm2 startup systemd -u pi --hp /home/pi
+pm2 start node-red
+pm2 status
+
+
