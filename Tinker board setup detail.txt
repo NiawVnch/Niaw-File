@@ -84,9 +84,9 @@ linaro@linaro-alip:~/Downloads$ sudo dpkg -i code_1.90.1-1718139718_arm64.deb
 #install MQTT broker on device
 sudo apt-get install mosquitto mosquitto-clients
 
-#Rule file for allow 1880 port firewall
+#Rule file for allow 1883/3389 port firewall
 sudo mkdir -p /etc/iptables
-sudo iptables -A INPUT -p tcp --dport 1880 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 1883 -j ACCEPT
 #Not use#sudo iptables-save > /etc/iptables/rules.v4
 sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null
 
