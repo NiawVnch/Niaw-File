@@ -39,6 +39,9 @@ python3 "Test Camera.py"
 cd Downloads
 sudo dpkg -i code_1.90.1-1718139718_arm64.deb
 
+#install firefox
+sudo apt install firefox-esr
+
 #install MQTT broker on device
 sudo apt-get install mosquitto mosquitto-clients
 
