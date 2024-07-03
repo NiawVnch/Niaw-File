@@ -48,6 +48,9 @@ sudo apt-get install mosquitto mosquitto-clients
 #get IP address of tinker board wlp1s0, wlan
 sudo ifconfig
 
+#get IP address of windows pc wlp1s0, wlan
+ipconfig
+
 #Rule file for allow 1883/3389 port firewall
 sudo mkdir -p /etc/iptables
 sudo iptables -A INPUT -p tcp --dport 1883 -j ACCEPT
