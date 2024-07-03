@@ -42,11 +42,21 @@ sudo dpkg -i code_1.90.1-1718139718_arm64.deb
 #install firefox
 sudo apt install firefox-esr
 
-#install MQTT broker on device
+#install MQTT broker on tinker board
 sudo apt-get install mosquitto mosquitto-clients
 
 #get IP address of tinker board wlp1s0, wlan
 sudo ifconfig
+
+#install MQTT broker on windows pc
+1) Manually download on msoquitto website
+2) Locate the mosquitto.conf file, which is typically found in the directory where you installed Mosquitto (e.g., C:\Program Files\mosquitto).
+Edit mosquitto.conf by notepad to
+listener 1883
+allow_anonymous true
+3) Start MQTT on windows as broker
+cd "C:\Program Files\mosquitto"
+mosquitto -v -c mosquitto.conf
 
 #get IP address of windows pc wlp1s0, wlan
 ipconfig
