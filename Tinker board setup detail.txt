@@ -42,6 +42,9 @@ sudo dpkg -i code_1.90.1-1718139718_arm64.deb
 #install MQTT broker on device
 sudo apt-get install mosquitto mosquitto-clients
 
+#get IP address of tinker board wlp1s0, wlan
+sudo ifconfig
+
 #Rule file for allow 1883/3389 port firewall
 sudo mkdir -p /etc/iptables
 sudo iptables -A INPUT -p tcp --dport 1883 -j ACCEPT
