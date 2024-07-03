@@ -4,15 +4,16 @@ sudo apt update
 sudo apt upgrade
 
 #Install python
-#/sudo apt install python3
+sudo apt install python3
+sudo apt-get install python3-tk
 
 #Install pip
 
-#/sudo apt install python3-pip
+sudo apt install python3-pip
 
 #if have requirement file
 
-pip3 install -r requirements.txt
+#/pip3 install -r requirements.txt
 
 #Install Required Dependencies
 
@@ -94,5 +95,6 @@ sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null
 #sudo pm2 startup systemd -u pi --hp /home/pi
 #pm2 start node-red
 #pm2 status
+
 
 
