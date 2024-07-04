@@ -96,3 +96,18 @@ sudo systemctl start cycle_time_script.service
 #Check status + See logs
 sudo systemctl status cycle_time_script.service
 journalctl -u cycle_time_script.service
+
+#Remote tinker board setup
+sudo apt-get install xfonts-base
+sudo apt-get install tightvncserver
+vncserver #enter tinker board password
+#Check port (listen)
+sudo netstat -tunlp
+#Close VNC server
+vncserver -kill :1  # "1" = port (5901 -> 1, 5902 -> 2)
+
+#Windows pc set up
+1) install VNC viewer
+2) Fill ip address:port Ex. 192.168.112:5901
+3) Fill password of tinker board
+4) Done the tinker board screen will showed
