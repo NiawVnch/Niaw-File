@@ -67,3 +67,29 @@ sudo iptables -A INPUT -p tcp --dport 1883 -j ACCEPT
 sudo iptables -A INPUT -p tcp --dport 3389 -j ACCEPT
 sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null
 
+##Set up auto run
+sudo nano /etc/systemd/system/cycle_time_script.service
+
+#fill this to the service file -> Ctl+O -> Enter -> Ctl+X
+[Unit]
+Description=Cycle Time Python Script
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/linaro/Downloads/CycleTime_DY08_P1_main_02.py
+Restart=always
+User=linaro
+Environment="PATH=/usr/bin:/usr/local/bin"
+WorkingDirectory=/home/linaro/Downloads
+
+[Install]
+WantedBy=multi-user.target
+#######
+
+sudo systemctl daemon-reload
+sudo systemctl enable cycle_time_script.service
+sudo systemctl start cycle_time_script.service
+
+#Check status + See logs
+sudo systemctl status cycle_time_script.service
+journalctl -u cycle_time_script.service
