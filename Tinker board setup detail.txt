@@ -111,3 +111,19 @@ vncserver -kill :1  # "1" = port (5901 -> 1, 5902 -> 2)
 2) Fill ip address:port Ex. 192.168.112:5901
 3) Fill password of tinker board
 4) Done the tinker board screen will showed
+
+#Sending file from tinker board to windows pc vice versa
+#set up on tinker board
+sudo apt-get install openssh-server
+sudo ifconfig # check tinker boad ip addr
+
+#set up on windows pc 
+Download WinSCP on website
+
+#sending using terminal on windows pc
+#to tinker board
+scp path\to\local\file username@tinkerboard_ip:path\to\remote\directory
+scp C:\Users\YourUser\Documents\file.txt root@192.168.1.100:/home/root/
+#to windows pc
+scp username@tinkerboard_ip:path\to\remote\file path\to\local\directory
+scp root@192.168.1.100:/home/root/file.txt C:\Users\YourUser\Documents\
