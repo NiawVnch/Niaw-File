@@ -68,15 +68,18 @@ sudo iptables -A INPUT -p tcp --dport 3389 -j ACCEPT
 sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null
 
 ##Set up auto run
+sudo apt-get install xserver-common
+sudo apt-get install xvfb
 sudo nano /etc/systemd/system/cycle_time_script.service
 
 #fill this to the service file -> Ctl+O -> Enter -> Ctl+X
+#######
 [Unit]
 Description=Cycle Time Python Script
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/linaro/Downloads/CycleTime_DY08_P1_main_02.py
+ExecStart=/usr/bin/xvfb-run -a /usr/bin/python3 /home/linaro/Downloads/CycleTime_DY08_P1_main_02.py
 Restart=always
 User=linaro
 Environment="PATH=/usr/bin:/usr/local/bin"
