@@ -93,9 +93,11 @@ sudo systemctl daemon-reload
 sudo systemctl enable cycle_time_script.service
 sudo systemctl start cycle_time_script.service
 
-#Check status + See logs
+#Check status + See logs + disable
 sudo systemctl status cycle_time_script.service
 journalctl -u cycle_time_script.service
+sudo systemctl stop cycle_time_script.service
+sudo systemctl disable cycle_time_script.service
 
 #Remote tinker board setup
 sudo apt-get install xfonts-base
