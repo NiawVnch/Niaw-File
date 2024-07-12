@@ -70,6 +70,7 @@ sudo iptables-save | sudo tee /etc/iptables/rules.v4 > /dev/null
 ##Set up auto run
 sudo apt-get install xserver-common
 sudo apt-get install xvfb
+sudo apt install nano
 sudo nano /etc/systemd/system/cycle_time_script.service
 
 #fill this to the service file -> Ctl+O -> Enter -> Ctl+X
