@@ -121,6 +121,18 @@ sudo ifconfig # check tinker boad ip addr
 #set up on windows pc 
 Download WinSCP on website
 
+-Open WinSCP:
+Create a new session with the following details:
+File Protocol: SFTP
+Host name: IP address of your Tinkerboard
+Port number: 22 (default for SSH)
+User name: Your Tinkerboard's username (e.g., root or pi)
+Password: Your Tinkerboard's password
+-Transfer Files:
+Navigate to the directory on your Tinkerboard where the file is located.
+Navigate to the desired directory on your Windows PC.
+Drag and drop the file from your Tinkerboard to your PC.
+
 #sending using terminal on windows pc
 #to tinker board
 scp path\to\local\file username@tinkerboard_ip:path\to\remote\directory
