@@ -24,6 +24,13 @@ sudo apt-get install -y libgtk2.0-dev pkg-config
 pip install opencv-python scipy pandas matplotlib paho-mqtt
 pip install tensorflow==2.12.0 scikit-learn==1.4.2 scikit-image
 
+#install firefox
+sudo apt install firefox-esr
+
+#install VScode
+cd Downloads
+sudo dpkg -i code_1.90.1-1718139718_arm64.deb
+
 # Navigate to the directory containing the script
 #/cd /home/username/scripts
 
@@ -32,13 +39,6 @@ v4l2-ctl --list-devices
 
 # Run the script
 python3 "Test Camera.py"
-
-#install VScode
-cd Downloads
-sudo dpkg -i code_1.90.1-1718139718_arm64.deb
-
-#install firefox
-sudo apt install firefox-esr
 
 #install MQTT broker on tinker board
 sudo apt-get install mosquitto mosquitto-clients
