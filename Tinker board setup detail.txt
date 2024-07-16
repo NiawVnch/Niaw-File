@@ -81,10 +81,13 @@ Description=Cycle Time Python Script
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/xvfb-run -a /usr/bin/python3 /home/linaro/Downloads/CycleTime_DY08_P1_main_02.py
+Type=simple
+ExecStart=/usr/bin/python3 /home/linaro/Downloads/CycleTime_DY08_P6_main_02.py
 Restart=always
+RestartSec=10
 User=linaro
-Environment="PATH=/usr/bin:/usr/local/bin"
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/linaro/.Xauthority"
 WorkingDirectory=/home/linaro/Downloads
 
 [Install]
