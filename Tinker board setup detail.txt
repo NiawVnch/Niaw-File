@@ -107,7 +107,9 @@ sudo systemctl disable cycle_time_script.service
 #Remote tinker board setup
 sudo apt-get install xfonts-base
 sudo apt-get install tightvncserver
-vncserver #enter tinker board password
+sudo apt install lxde -y
+vncserver #enter tinker board password #log out and change desktop environment to lxde
+
 #Check port (listen)
 sudo netstat -tunlp
 #Close VNC server
