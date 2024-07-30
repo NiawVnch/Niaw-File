@@ -104,7 +104,7 @@ journalctl -u cycle_time_script.service
 sudo systemctl stop cycle_time_script.service
 sudo systemctl disable cycle_time_script.service
 
-#Remote tinker board setup
+#Remote tinker board setup (Manual)
 sudo apt-get install xfonts-base
 sudo apt-get install tightvncserver
 sudo apt install lxde -y
@@ -114,6 +114,50 @@ vncserver #enter tinker board password
 sudo netstat -tunlp
 #Close VNC server
 vncserver -kill :1  # "1" = port (5901 -> 1, 5902 -> 2)
+
+#Remote tinker board setup (Automatic)
+sudo apt-get update
+sudo apt-get install xfonts-base
+sudo apt-get install tightvncserver
+sudo apt install lxde -y
+
+nano /home/linaro/start_vnc.sh
+
+#####
+#!/bin/bash
+vncserver -localhost no
+vncserver -kill :1
+vncserver :1 
+#####
+
+chmod +x /home/linaro/start_vnc.sh
+
+
+sudo nano /etc/systemd/system/vncserver.service
+
+#####
+[Unit]
+Description=Start TightVNC server at startup
+After=syslog.target network.target
+
+[Service]
+Type=forking
+User=linaro
+WorkingDirectory=/home/linaro
+Environment=HOME=/home/linaro
+ExecStart=/home/linaro/start_vnc.sh
+ExecStop=/usr/bin/vncserver -kill :1
+
+[Install]
+WantedBy=multi-user.target
+#####
+
+sudo systemctl daemon-reload
+sudo systemctl enable vncserver.service
+sudo systemctl start vncserver.service
+
+sudo systemctl status vncserver.service
+
 
 #Windows pc set up
 1) install VNC viewer
