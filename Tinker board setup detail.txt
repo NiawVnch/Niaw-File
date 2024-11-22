@@ -129,9 +129,15 @@ vncserver -localhost no
 vncserver -kill :1
 vncserver :1 
 #####
+or
+#####
+#!/bin/bash
+/usr/bin/vncserver -localhost no
+/usr/bin/vncserver -kill :1
+/usr/bin/vncserver :1 
+#####
 
 chmod +x /home/linaro/start_vnc.sh
-
 
 sudo nano /etc/systemd/system/vncserver.service
 
