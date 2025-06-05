@@ -1,5 +1,9 @@
+<Create service for clear log>
+
 sudo su
+
 echo "" > /var/log/syslog
+
 echo "" > /var/log/daemon.log
 
 sudo find /var/log -type f -name "*.log" -exec truncate -s 0 {} \;
@@ -12,7 +16,7 @@ sudo apt-get clean
 
 sudo nano /usr/local/bin/clear_logs.sh
 
-
+<Paste this to the .sh file>
 #!/bin/bash
 # Clear syslog and daemon.log
 sudo sh -c 'echo "" > /var/log/syslog'
@@ -23,7 +27,7 @@ sudo find /var/log -type f -name "*.log" -exec truncate -s 0 {} \;
 
 # Remove files older than 7 days in /var/tmp
 sudo find /var/tmp -type f -mtime +7 -exec rm {} \;
-
+<<<<>>>>
 
 
 sudo chmod +x /usr/local/bin/clear_logs.sh
@@ -31,7 +35,7 @@ sudo chmod +x /usr/local/bin/clear_logs.sh
 
 sudo nano /etc/systemd/system/clear_logs.service
 
-
+<Paste this to the .service file>
 [Unit]
 Description=Clear Logs and Temporary Files at Startup
 After=multi-user.target
@@ -43,14 +47,15 @@ ExecStart=/usr/local/bin/clear_logs.sh
 [Install]
 WantedBy=multi-user.target
 
+<<<<>>>>
 
-
-
+<Start service command>
 sudo systemctl enable clear_logs.service
 sudo systemctl start clear_logs.service
 
+<Stop service command>
+sudo systemctl stop clear_logs.service
 
-sudo /usr/local/bin/clear_logs.sh
 
 
 
